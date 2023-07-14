@@ -35,7 +35,7 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = -1001924763706
-AUTH_GROUPS = -1001525556358
+AUTH_GROUPS = [-1001525556358]
 FILDLT_CNL = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('FILDLT_CNL', '0').split()]
 
 # MongoDB information
@@ -44,9 +44,9 @@ DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Channel Button Links
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/Binge_Request_Group')
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+LpSH9qCWed4xM2Vh')
 CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Binge_Pirates')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Binge_Request_Group')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+LpSH9qCWed4xM2Vh')
 MSG_ALRT = environ.get('MSG_ALRT', 'Share and Support Us')
 
 # Custom Chats
