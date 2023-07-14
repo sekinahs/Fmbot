@@ -12,8 +12,8 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'spidy')
-API_ID = 26742485
-API_HASH = "2fb9d07373426edc362e86d80d713e3b"
+API_ID = 26593508
+API_HASH = "603a6a9310657fd44513d6197b933a99"
 BOT_TOKEN ="6219280231:AAGmpGZQtePhvuKo20KYMtW7Pxd5aoHFahc"
 
 # Bot settings
