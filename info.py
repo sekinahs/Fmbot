@@ -12,9 +12,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'spidy')
-API_ID = 26593508
-API_HASH = "603a6a9310657fd44513d6197b933a99"
-BOT_TOKEN ="6219280231:AAGmpGZQtePhvuKo20KYMtW7Pxd5aoHFahc"
+API_ID = 26742485
+API_HASH = "2fb9d07373426edc362e86d80d713e3b"
+BOT_TOKEN ="6388726016:AAG_2nBe81WNNvpGqO8H16Q_7DiMppU_ZLM"
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -28,19 +28,19 @@ SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/b60d2facc538ad82ad
 NEWGRP = environ.get("NEWGRP", "https://telegra.ph/file/705593c3ae56831c8e565.jpg")
 
 # Admins, Channels & Users
-ADMINS = [6071075789]
-CHANNELS = [-1001850797238]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '').split()]
+ADMINS = [5366087560]
+CHANNELS = [-1001598947835 , -1001770682949]
+auth_users = []
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
-AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
+AUTH_CHANNEL = -1001924763706
+AUTH_GROUPS = -1001525556358
 FILDLT_CNL = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('FILDLT_CNL', '0').split()]
 
 # MongoDB information
-DATABASE_URI = "mongodb+srv://music:music@cluster0.ev0082p.mongodb.net/?retryWrites=true&w=majority"
-DATABASE_NAME = environ.get('DATABASE_NAME', "EvaMaria")
+DATABASE_URI = "mongodb+srv://auto:auto@cluster0.znf4k.mongodb.net/?retryWrites=true&w=majority"
+DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Channel Button Links
@@ -50,13 +50,13 @@ SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'Binge_Request_Group')
 MSG_ALRT = environ.get('MSG_ALRT', 'Share and Support Us')
 
 # Custom Chats
-SUPPORT_GROUP = -1001700032882
+SUPPORT_GROUP = -1001525556358
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 't.me/Binge_Pirates')
 
 # Log Channels
-LOG_CHANNEL = -1001850797238
-RQST_LOG_CHANNEL = -1001850797238
+LOG_CHANNEL = -1001613943155
+RQST_LOG_CHANNEL = -1001949843335
 
 # Bot Options
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
