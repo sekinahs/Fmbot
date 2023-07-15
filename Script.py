@@ -325,6 +325,7 @@ Exᴀᴍᴘʟᴇ : Loki S01E01 Oʀ Loki S01 E01
 Pᴏᴡᴇʀᴇᴅ Bʏ :- Bɪɴɢᴇ Pɪʀᴀᴛᴇs"""
     
     REQUEST_TXT = """<b>#PENDING
+    
 📫 Rᴇǫᴜᴇsᴛ Dᴇᴛᴀɪʟs :
 
 🔖 Mᴇssᴀɢᴇ : <code>{}</code>
