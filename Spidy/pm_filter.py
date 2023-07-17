@@ -763,7 +763,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         bmess_id = query.data.split()[2]
         await client.delete_messages(SUPPORT_GROUP, message_ids=int(bmess_id))
         ind=query.message.text.index("\n")
-        await query.edit_message_text(text=f"<b>#COMPLETED<s>{query.message.text[ind+1:]}</s></b>",
+        await query.edit_message_text(text=f"<b>#COMPLETED\n<s>{query.message.text[ind+1:]}</s></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="✅️ Uᴘʟᴏᴀᴅᴇᴅ ✅️", callback_data="doneupld")]])
         )
@@ -779,7 +779,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         bmess_id = query.data.split()[2]
         await client.delete_messages(SUPPORT_GROUP, message_ids=int(bmess_id))
         ind=query.message.text.index("\n")
-        await query.edit_message_text(text=f"<b>#UNAVAILABLE<s>{query.message.text[ind+1:]}</s></b>",
+        await query.edit_message_text(text=f"<b>#UNAVAILABLE\n<s>{query.message.text[ind+1:]}</s></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="⚠️ Uɴᴀᴠᴀɪʟᴀʙʟᴇ ⚠️", callback_data="notavl")]])
         )
@@ -795,7 +795,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         bmess_id = query.data.split()[2]
         await client.delete_messages(SUPPORT_GROUP, message_ids=int(bmess_id))
         ind=query.message.text.index("\n")
-        await query.edit_message_text(text=f"<b>#REJECTED<s>{query.message.text[ind+1:]}</s></b>",
+        await query.edit_message_text(text=f"<b>#REJECTED\n<s>{query.message.text[ind+1:]}</s></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="❌ Rᴇᴊᴇᴄᴛᴇᴅ ❌", callback_data="rjctreq")]])
         )
@@ -811,7 +811,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         bmess_id = query.data.split()[2]
         await client.delete_messages(SUPPORT_GROUP, message_ids=int(bmess_id))
         ind=query.message.text.index("\n")
-        await query.edit_message_text(text=f"<b>#ALREADY<s>{query.message.text[ind+1:]}</s></b>",
+        await query.edit_message_text(text=f"<b>#ALREADY\n<s>{query.message.text[ind+1:]}</s></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="♻️ Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ Iɴ Cʜᴀɴɴᴇʟ ♻️", callback_data="donealrd2")]])
         )
@@ -827,7 +827,7 @@ Kɪɴᴅʟʏ Cʜᴇᴄᴋ Tʜᴇ Cʜᴀɴɴᴇʟ Bᴇғᴏʀᴇ Rᴇǫᴜᴇsᴛ
         bmess_id = query.data.split()[2]
         await client.delete_messages(SUPPORT_GROUP, message_ids=int(bmess_id))
         ind=query.message.text.index("\n")
-        await query.edit_message_text(text=f"<b>#ALREADY<s>{query.message.text[ind+1:]}</s></b>",
+        await query.edit_message_text(text=f"<b>#ALREADY\n<s>{query.message.text[ind+1:]}</s></b>",
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="♻️ Aʟʀᴇᴀᴅʏ Aᴠᴀɪʟᴀʙʟᴇ ♻️", callback_data="donealrd")]])
         )
