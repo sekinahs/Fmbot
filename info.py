@@ -28,7 +28,7 @@ SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/b60d2facc538ad82ad
 NEWGRP = environ.get("NEWGRP", "https://telegra.ph/file/705593c3ae56831c8e565.jpg")
 
 # Admins, Channels & Users
-ADMINS = [6071075789]
+ADMINS = [6071075789,6646857375]
 CHANNELS = [-1001598947835 , -1001770682949]
 auth_users = []
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
