@@ -55,8 +55,8 @@ FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
 FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 't.me/Binge_Pirates')
 
 # Log Channels
-LOG_CHANNEL = -1001613943155
-RQST_LOG_CHANNEL = -1001949843335
+LOG_CHANNEL = -1001513800145
+RQST_LOG_CHANNEL = -1001513800145
 
 # Bot Options
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
