@@ -33,6 +33,10 @@ logger.setLevel(logging.ERROR)
 
 BUTTONS = {}
 SPELL_CHECK = {}
+TEMPS='''<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ☞ <code>{}</code>
+Rᴇǫᴜᴇsᴛᴇᴅ Bʏ ☞ {}
+
+• {}</b>'''
 
 @Client.on_message(filters.private & filters.text & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.private & filters.text & filters.incoming)
 async def pv_filter(client, message):
@@ -1088,17 +1092,17 @@ async def auto_filter(client, msg, spoll=False):
         search, files, offset, total_results = spoll
     pre = 'filep' if settings['file_secure'] else 'file'
     req = message.from_user.id if message.from_user else 0
+    btn=[]
     if settings["button"]:
-        btn = [
+        butn = [
             [
-                InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'{pre}#{req}#{file.file_id}'
-                ),
+                
+                f"<a href='https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}'>[{get_size(file.file_size)}] {file.file_name}</a>"
             ]
             for file in files
         ]
     else:
-        btn = [
+        butn = [
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}",
@@ -1111,10 +1115,10 @@ async def auto_filter(client, msg, spoll=False):
             ]
             for file in files
         ]
-
+    
     try:
         if settings['auto_delete']:
-            btn.insert(0, 
+            btn.insert(0,
                 [
                     InlineKeyboardButton(f'Iɴғᴏ', 'reqinfo'),
                     InlineKeyboardButton(f'Mᴏᴠɪᴇ', 'minfo'),
@@ -1204,11 +1208,12 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
+        smt="\n •".join(butn)
         try:
             if settings['auto_delete']:
                 cap = script.CAP_DLT_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
             else:
-                cap = script.CAP_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
+                cap = TEMPS.format(search, message.from_user.mention if message.from_user else message.chat.title, smt)
         except KeyError:
             grpid = await active_connection(str(message.from_user.id))
             await save_group_settings(grpid, 'auto_delete', True)
@@ -1216,7 +1221,7 @@ async def auto_filter(client, msg, spoll=False):
             if settings['auto_delete']:
                 cap = script.CAP_DLT_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
             else:
-                cap = script.CAP_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
+                cap = TEMPS.format(search, message.from_user.mention if message.from_user else message.chat.title , smt)
     if imdb and imdb.get('poster'):
         try:
             if settings['auto_delete']:
