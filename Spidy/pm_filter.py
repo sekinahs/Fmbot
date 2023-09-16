@@ -36,7 +36,7 @@ SPELL_CHECK = {}
 TEMPS='''<b>Tʜᴇ Rᴇꜱᴜʟᴛꜱ Fᴏʀ ☞ <code>{}</code>
 Rᴇǫᴜᴇsᴛᴇᴅ Bʏ ☞ {}
 
-• {}</b>'''
+┎ {}</b>'''
 
 @Client.on_message(filters.private & filters.text & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.private & filters.text & filters.incoming)
 async def pv_filter(client, message):
@@ -85,17 +85,15 @@ async def next_page(bot, query):
         return
     settings = await get_settings(query.message.chat.id)
     reqnxt  = query.from_user.id if query.from_user else 0
+    btn=[]
     if settings['button']:
-        btn = [
-            [
-                InlineKeyboardButton(
-                    text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{reqnxt}#{file.file_id}'
-                ),
-            ]
+        butn = [
+                
+            f"<a href='https://t.me/{temp.U_NAME}?start=files_{file.file_id}'>[{get_size(file.file_size)}] {file.file_name}</a>"
             for file in files
         ]
     else:
-        btn = [
+        butn = [
             [
                 InlineKeyboardButton(
                     text=f"{file.file_name}", callback_data=f'files#{reqnxt}#{file.file_id}'
@@ -171,8 +169,17 @@ async def next_page(bot, query):
     btn.insert(0, [
         InlineKeyboardButton("⚡ Sᴜʙsᴄʀɪʙᴇ Cʜᴀɴɴᴇʟ ⚡", url=f"https://t.me/Binge_Pirates")
     ])
+    lk=query.message.text.html.split("\n")
+    temps='''<b>{}
+{}
+
+┎ {}</b>'''
+    smt="\n┃\n┠ ".join(butn)
+    last=smt.split("\n")[-1]
+    smt=smt.replace(last , last.replace("┠","┖"))
     try:
-        await query.edit_message_reply_markup(
+        await query.edit_message_text(
+            temps.format(lk[0].replace('<b>','').replace('</b>','') , lk[1].replace('<b>','').replace('</b>','') , smt),
             reply_markup=InlineKeyboardMarkup(btn)
         )
     except MessageNotModified:
@@ -1095,10 +1102,8 @@ async def auto_filter(client, msg, spoll=False):
     btn=[]
     if settings["button"]:
         butn = [
-            [
                 
                 f"<a href='https://t.me/{temp.U_NAME}?start={pre}_{file.file_id}'>[{get_size(file.file_size)}] {file.file_name}</a>"
-            ]
             for file in files
         ]
     else:
@@ -1208,7 +1213,9 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        smt="\n •".join(butn)
+        smt="\n┃\n┠ ".join(butn)
+        last=smt.split("\n")[-1]
+        smt=smt.replace(last , last.replace("┠","┖"))
         try:
             if settings['auto_delete']:
                 cap = script.CAP_DLT_TXT.format(search, message.from_user.mention if message.from_user else message.chat.title)
