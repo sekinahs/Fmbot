@@ -10,3 +10,4 @@ cinemagoer
 psutil
 pytz
 aiohttp
+uvloop

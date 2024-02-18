@@ -324,12 +324,11 @@ async def log_file(bot, message):
     except Exception as e:
         await message.reply(str(e))
 
-@Client.on_message(filters.command('delete') & filters.user(ADMINS))
-async def delete(bot, message):
+async def delete(bot, message , to_dlt):
     """Delete file from database"""
-    reply = message.reply_to_message
+    reply = to_dlt
     if reply and reply.media:
-        msg = await message.reply("<b>Pʀᴏᴄᴇssɪɴɢ...⏳</b>", quote=True)
+        msg = await to_dlt.reply("<b>Pʀᴏᴄᴇssɪɴɢ...⏳</b>", quote=True)
     else:
         await message.reply('<b>Rᴇᴘʟʏ Tᴏ Fɪʟᴇ Wɪᴛʜ/Dᴇʟᴇᴛᴇ Wʜɪᴄʜ Yᴏᴜ Wᴀɴᴛ Tᴏ Dᴇʟᴇᴛᴇ</b>', quote=True)
         return
@@ -370,6 +369,22 @@ async def delete(bot, message):
                 await msg.edit('<b>Fɪʟᴇ Is Sᴜᴄᴄᴇssғᴜʟʟʏ Dᴇʟᴇᴛᴇᴅ Fʀᴏᴍ Tʜᴇ Dᴀᴛᴀʙᴀsᴇ</b>')
             else:
                 await msg.edit('<b>Fɪʟᴇ Is Nᴏᴛ Fᴏᴜɴᴅ Iɴ Tʜᴇ Dᴀᴛᴀʙᴀsᴇ</b>')
+
+@Client.on_message(filters.command('delete') & filters.user(ADMINS))
+async def delete1(app , message):
+    await delete(app , message , message.reply_to_message)
+
+@Client.on_message(filters.command('deleteabove') & filters.user(ADMINS))
+async def deleteabove(app , message):
+    reply = message.reply_to_message
+    if not reply:
+        await message.reply('<b>Rᴇᴘʟʏ Tᴏ Fɪʟᴇ Wɪᴛʜ/Dᴇʟᴇᴛᴇ Wʜɪᴄʜ Yᴏᴜ Wᴀɴᴛ Tᴏ Dᴇʟᴇᴛᴇ</b>', quote=True)
+        return
+    for i in range(reply.id , message.id):
+        ms = await app.get_messages(message.chat.id , i)
+        if not ms: continue
+        if ms.empty: continue
+        await delete(app , message , ms)
 
 
 @Client.on_message(filters.command('deleteall') & filters.user(ADMINS))
@@ -602,7 +617,7 @@ async def save_template(client, message):
     await save_group_settings(grp_id, 'template', template)
     await sts.edit(f"**Sᴜᴄᴄᴇssғᴜʟʟʏ Cʜᴀɴɢᴇᴅ Tᴇᴍᴘʟᴀᴛᴇ Fᴏʀ `{title}` Tᴏ**\n\n`{template}`")
 
-@Client.on_message((filters.regex("#request")) & filters.chat(chats=SUPPORT_GROUP))
+"""@Client.on_message((filters.regex("#request")) & filters.chat(chats=SUPPORT_GROUP))
 async def request(bot, message):
     if message.text in ['#request']:
         await message.reply_text(text = '<b>Usᴇ Cᴏʀʀᴇᴄᴛ Fᴏʀᴍᴀᴛ...</b>', quote = True)
@@ -629,7 +644,7 @@ async def request(bot, message):
                InlineKeyboardButton(text="‼️ Vɪᴇᴡ Yᴏᴜʀ Rᴇǫᴜᴇsᴛ ‼️", url=f"{rqmsg.link}")
            ]] 
            )
-        )
+        )"""
 
 @Client.on_message(filters.command("usend") & filters.user(ADMINS))
 async def send_msg(bot, message):

@@ -108,7 +108,3 @@ class Bot(Client):
             for message in messages:
                 yield message
                 current += 1
-
-
-app = Bot()
-app.run()
