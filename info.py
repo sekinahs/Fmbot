@@ -19,7 +19,7 @@ BOT_TOKEN ="6388726016:AAG_2nBe81WNNvpGqO8H16Q_7DiMppU_ZLM"
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
 USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
-PORT = environ.get("PORT", "8080")
+PORT = environ.get("PORT", "8000")
 TIMEZONE = environ.get("TIMEZONE", "Asia/Kolkata")
 
 PICS = (environ.get('PICS', 'https://graph.org/file/3bd92f3dc6a919289390f.jpg https://graph.org/file/453a762f3fc0848df36fc.jpg https://graph.org/file/e008aa7ad5b19063671c3.jpg https://graph.org/file/e884751317c449fb05bf2.jpg https://graph.org/file/0cd9c5291040995ab717d.jpg https://graph.org/file/eea9575766df74f86ec29.jpg https://graph.org/file/6c7acd0052c07ea212b83.jpg')).split()
