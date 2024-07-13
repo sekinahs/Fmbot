@@ -35,7 +35,7 @@ AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = -1001924763706
-AUTH_GROUPS = [-1001525556358,-1001979281574 , -1001889778748]
+AUTH_GROUPS = [-1002156517317,-1001979281574 , -1001889778748]
 FILDLT_CNL = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('FILDLT_CNL', '0').split()]
 
 # MongoDB information
