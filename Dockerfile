@@ -8,4 +8,4 @@ COPY . .
 
 EXPOSE 8000
 
-CMD bash start.sh
+CMD python3 main.py
