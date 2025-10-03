@@ -39,7 +39,7 @@ AUTH_GROUPS = [-1002242030179, -1002201035608]
 FILDLT_CNL = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('FILDLT_CNL', '0').split()]
 
 # MongoDB information
-DATABASE_URI = "mongodb+srv://mu1820034:meow@cluster0.aqftnlw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0""
+DATABASE_URI = "mongodb+srv://mu1820034:meow@cluster0.aqftnlw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
