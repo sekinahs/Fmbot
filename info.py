@@ -12,9 +12,9 @@ def is_enabled(value, default):
 
 # Bot information
 SESSION = environ.get('SESSION', 'spidy')
-API_ID = 26742485
-API_HASH = "2fb9d07373426edc362e86d80d713e3b"
-BOT_TOKEN ="6388726016:AAG_2nBe81WNNvpGqO8H16Q_7DiMppU_ZLM"
+API_ID = 20697817
+API_HASH = "301dc2f99971593918d02c8378c7070c"
+BOT_TOKEN ="7685914795:AAEVspQ92Wnbc_k_ZwTSZbOiUEYt7OMiFQI"
 
 # Bot settings
 CACHE_TIME = int(environ.get('CACHE_TIME', 300))
@@ -22,41 +22,41 @@ USE_CAPTION_FILTER = bool(environ.get('USE_CAPTION_FILTER', True))
 PORT = environ.get("PORT", "8000")
 TIMEZONE = environ.get("TIMEZONE", "Asia/Kolkata")
 
-PICS = (environ.get('PICS', 'https://graph.org/file/3bd92f3dc6a919289390f.jpg https://graph.org/file/453a762f3fc0848df36fc.jpg https://graph.org/file/e008aa7ad5b19063671c3.jpg https://graph.org/file/e884751317c449fb05bf2.jpg https://graph.org/file/0cd9c5291040995ab717d.jpg https://graph.org/file/eea9575766df74f86ec29.jpg https://graph.org/file/6c7acd0052c07ea212b83.jpg')).split()
-NOR_IMG = environ.get("NOR_IMG", "https://telegra.ph/file/46443096bc6895c74a716.jpg")
-SPELL_IMG = environ.get("SPELL_IMG", "https://telegra.ph/file/b60d2facc538ad82ad22d.jpg")
-NEWGRP = environ.get("NEWGRP", "https://telegra.ph/file/705593c3ae56831c8e565.jpg")
+PICS = (environ.get('PICS', 'https://telegra.ph/file/72db861ea6e7ab287b81c-779b0d2731a0335110.jpg')).split()
+NOR_IMG = environ.get("NOR_IMG", "")
+SPELL_IMG = environ.get("SPELL_IMG", "")
+NEWGRP = environ.get("NEWGRP", "")
 
 # Admins, Channels & Users
-ADMINS = [6071075789,6646857375,6389186248]
-CHANNELS = [-1001598947835 , -1001770682949]
+ADMINS = [6319218715]
+CHANNELS = [-1002929028097]
 auth_users = []
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
 auth_channel = environ.get('AUTH_CHANNEL')
 auth_grp = environ.get('AUTH_GROUP')
-AUTH_CHANNEL = -1001924763706
-AUTH_GROUPS = [-1002156517317,-1001979281574 , -1001889778748]
+AUTH_CHANNEL = -1002242030179
+AUTH_GROUPS = [-1002242030179, -1002201035608]
 FILDLT_CNL = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('FILDLT_CNL', '0').split()]
 
 # MongoDB information
-DATABASE_URI = "mongodb+srv://auto:auto@cluster0.znf4k.mongodb.net/?retryWrites=true&w=majority"
-DATABASE_NAME = environ.get('DATABASE_NAME', "Cluster0")
+DATABASE_URI = "mongodb+srv://mu1820034:meow@cluster0.aqftnlw.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0""
+DATABASE_NAME = environ.get('DATABASE_NAME', "mu18")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 # Channel Button Links
-GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+LpSH9qCWed4xM2Vh')
-CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Binge_Pirates')
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/+LpSH9qCWed4xM2Vh')
+GRP_LNK = environ.get('GRP_LINK' , 'https://t.me/FS_REQAIST_BOT')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/F5_FILMS')
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'https://t.me/FS_REQAIST_BOT')
 MSG_ALRT = environ.get('MSG_ALRT', 'Share and Support Us')
 
 # Custom Chats
-SUPPORT_GROUP = -1001525556358
+SUPPORT_GROUP = -1002385998898
 FILE_CHANNEL = int(environ.get('FILE_CHANNEL', 0))
-FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 't.me/Binge_Pirates')
+FILE_CHANNEL_LINK = environ.get('FILE_CHANNEL_LINK', 'https://t.me/F5_FILMS')
 
 # Log Channels
-LOG_CHANNEL = -1001513800145
-RQST_LOG_CHANNEL = -1001915553804
+LOG_CHANNEL = -1002242030179
+RQST_LOG_CHANNEL = -1002242030179
 
 # Bot Options
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), True)
